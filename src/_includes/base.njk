@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title | escape }} — {{ site.name | escape }}</title>
+  <meta name="description" content="{{ description or site.description | escape }}">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | url }}">
+</head>
+<body id="top">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="header">
+    <a class="wordmark" href="{{ '/' | url }}">{{ site.name }}</a>
+    <nav aria-label="Main navigation">
+      <a href="{{ '/' | url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Selected Works</a>
+      <a href="{{ '/contact/' | url }}" {% if page.url == '/contact/' %}aria-current="page"{% endif %}>Contact</a>
+    </nav>
+    <a class="social" href="{{ site.instagram }}">Instagram ↗</a>
+  </header>
+  <main id="main">{{ content | safe }}</main>
+  <footer><span>© {{ site.name }}</span><a href="#top">Back to top ↑</a></footer>
+</body>
+</html>

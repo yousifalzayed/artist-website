@@ -1,0 +1,13 @@
+---
+layout: base.njk
+title: Selected Works
+---
+<h1 class="sr-only">Selected Works</h1>
+<div class="work-grid">
+{% for project in collections.projects %}
+  <a class="work" href="{{ project.url | url }}">
+    <div class="work-image"><img src="{{ (project.url + project.data.cover) | url }}" alt="{{ project.data.coverAlt | escape }}" {% if loop.index > 3 %}loading="lazy"{% endif %} width="1000" height="1000"></div>
+    <div class="work-label"><h2>{{ project.data.title }}</h2><span>{{ project.data.year }}</span></div>
+  </a>
+{% endfor %}
+</div>

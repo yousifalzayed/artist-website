@@ -1,0 +1,17 @@
+{
+  "name": "artist-website",
+  "version": "1.0.0",
+  "description": "Yousif Alzayed artist portfolio",
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "type": "module",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  },
+  "private": true
+}
