@@ -28,6 +28,14 @@ video: https://vimeo.com/964602219
 
 YouTube watch, youtu.be, Shorts, live, and embed links are also supported. The page displays a responsive player with controls, fullscreen support, and a link to the original video. Playback starts when the visitor presses Play. For unlisted Vimeo videos, include the complete link with its hash. The video's provider settings must permit embedding on your website.
 
+## Edit existing projects in GitHub
+
+Open `src/projects/<slug>/index.md` on `portfolio-structure`, click the pencil icon, edit the text below the front matter, and commit your changes. To change images, upload files into that project's `images/` folder, then update `cover` and `gallery` filenames in `index.md`. To change the video, replace `video` with a Vimeo or YouTube link.
+
+Creating `src/projects/new-project/index.md` through GitHub's **Add file → Create new file** also creates its folder. Every committed change rebuilds the preview and updates the generated pages and listings; folders and image selections remain under your control. Adding an image file alone does not add it to the gallery: list it in `gallery`.
+
+Performance projects can start with only text and a video link. If `cover` is omitted, their listing shows a text card until you add a cover image. You can omit `year` until the date is confirmed.
+
 ## Preview locally
 
 Requires Node.js 22 or newer.

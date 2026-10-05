@@ -7,7 +7,7 @@ permalink: /performances/
 <div class="work-grid">
 {% for project in collections.performances %}
   <a class="work" href="{{ project.url | url }}">
-    <div class="work-image"><img src="{{ (project.url + project.data.cover) | url }}" alt="{{ project.data.coverAlt | escape }}" {% if loop.index > 3 %}loading="lazy"{% endif %} width="1000" height="1000"></div>
+    <div class="work-image">{% if project.data.cover %}<img src="{{ (project.url + project.data.cover) | url }}" alt="{{ project.data.coverAlt | escape }}" {% if loop.index > 3 %}loading="lazy"{% endif %} width="1000" height="1000">{% else %}<div class="work-video-cover"><span>{{ project.data.title | escape }}</span><small>Video performance ↗</small></div>{% endif %}</div>
     <div class="work-label"><h2>{{ project.data.title }}</h2><span>{{ project.data.year }}</span></div>
   </a>
 {% endfor %}
