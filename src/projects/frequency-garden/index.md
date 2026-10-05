@@ -3,6 +3,9 @@
   "title": "Frequency Garden",
   "year": "2024",
   "order": 1,
+  "video": "https://vimeo.com/1035462371",
+  "videoAutoplay": true,
+  "videoLoop": true,
   "cover": "images/cover.jpg",
   "coverAlt": "Frequency Garden — documentation 1",
   "gallery": [

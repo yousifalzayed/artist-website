@@ -28,6 +28,8 @@ video: https://vimeo.com/964602219
 
 YouTube watch, youtu.be, Shorts, live, and embed links are also supported. The page displays a responsive player with controls, fullscreen support, and a link to the original video. Playback starts when the visitor presses Play. For unlisted Vimeo videos, include the complete link with its hash. The video's provider settings must permit embedding on your website.
 
+For Vimeo clips that should autoplay muted and loop, add `videoAutoplay: true` and `videoLoop: true` to the front matter (use JSON syntax in existing JSON-formatted files). Controls remain visible so visitors can pause or enable audio. Phones typically use system volume buttons. Browsers may block autoplay; visitors can still tap Play. These options are opt-in and currently apply to Vimeo only; long performances keep click-to-play behavior.
+
 ## Edit existing projects in GitHub
 
 Open `src/projects/<slug>/index.md` on `portfolio-structure`, click the pencil icon, edit the text below the front matter, and commit your changes. To change images, upload files into that project's `images/` folder, then update `cover` and `gallery` filenames in `index.md`. To change the video, replace `video` with a Vimeo or YouTube link.

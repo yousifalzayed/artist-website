@@ -10,11 +10,12 @@ layout: base.njk
     <div class="prose">{{ content | safe }}{% if links.length %}<ul class="project-links">{% for link in links %}<li><a href="{{ link.url | escape }}">{{ link.label | escape }} ↗</a></li>{% endfor %}</ul>{% endif %}</div>
   </div>
   {% if video %}
-  {% set player = video | videoEmbed %}
+  {% set player = video | videoEmbed(videoAutoplay, videoLoop) %}
   <section class="performance-video" aria-label="{{ title | escape }} video">
     <div class="video-frame">
       <iframe src="{{ player.src | escape }}" title="{{ title | escape }} — {{ player.provider }} player" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </div>
+    {% if videoAutoplay and player.provider == "Vimeo" %}<p class="video-link">Starts muted. Tap the player’s sound control to enable audio; on phones, use your volume buttons. If playback doesn’t start, tap Play.</p>{% endif %}
     <p class="video-link"><a href="{{ player.url | escape }}">Watch on {{ player.provider }} ↗</a></p>
   </section>
   {% endif %}
