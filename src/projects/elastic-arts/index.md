@@ -4,6 +4,7 @@
   "year": "2024",
   "order": 4,
   "category": "performance",
+  "video": "https://vimeo.com/964602219",
   "cover": "images/cover.jpg",
   "coverAlt": "Multi-Channel Sound at Elastic Arts — documentation 1",
   "gallery": [
@@ -20,4 +21,3 @@ May 10, 2024 · Elastic Arts, Chicago
 
 Electro-Acoustic Composition that utilized the CLEAT system at Elastic Arts. Which is a 16 channel speaker system which we used to move sound to various parts of the room.
 
-[Watch the performance on Vimeo](https://vimeo.com/964602219)

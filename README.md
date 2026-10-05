@@ -17,6 +17,17 @@ The homepage and project page are generated automatically. You never edit either
 
 Set `draft: true` to omit a project page and its homepage card. This is NOT privacy protection: the repository is public and image files are still copied. Never commit private material or credentials.
 
+## Add a Vimeo or YouTube performance
+
+In the project's front matter, set `category: performance` and add the ordinary video link:
+
+```yaml
+category: performance
+video: https://vimeo.com/964602219
+```
+
+YouTube watch, youtu.be, Shorts, live, and embed links are also supported. The page displays a responsive player with controls, fullscreen support, and a link to the original video. Playback starts when the visitor presses Play. For unlisted Vimeo videos, include the complete link with its hash. The video's provider settings must permit embedding on your website.
+
 ## Preview locally
 
 Requires Node.js 22 or newer.
@@ -55,7 +66,7 @@ The portfolio itself is static and public: no sign-in, database, passwords, or v
 ## Migration notes / review before launch
 
 - Eight projects and their available still images were imported from the current portfolio. Image files are resized web copies (up to 1400px), not archival originals.
-- The Elastic Arts performance is linked to Vimeo. Any other embedded video, animation, or audio needs a separate media review; the import preserves still images only.
+- Elastic Arts includes an embedded Vimeo player. Add a video link to other projects as needed; the original import preserved still images only.
 - Text comes from the public project pages, with minimal title/location normalization. Verify spelling and credits before launch. `docs/migration-sources.json` records source URLs and image origins.
 - Image alt text is provisional and should be replaced with specific visual descriptions and any photographer credits.
 - The biography uses only the general artist description; the old time-sensitive employment statement is omitted for review.
