@@ -21,5 +21,5 @@ layout: base.njk
   <div class="gallery">
   {% for image in gallery %}<figure><a href="{{ (page.url + image.src) | url }}"><img src="{{ (page.url + image.src) | url }}" alt="{{ image.alt | escape }}" {% if not loop.first %}loading="lazy"{% endif %}></a>{% if image.caption %}<figcaption>{{ image.caption }}</figcaption>{% endif %}</figure>{% endfor %}
   </div>
-  <a class="back end" href="{{ '/' | url }}">← All {{ listingLabel | lower }}</a>
+  <a class="back end" href="{{ listingUrl | url }}">← All {{ listingLabel | lower }}</a>
 </article>
