@@ -3,6 +3,7 @@
   "title": "Multi-Channel Sound at Elastic Arts",
   "year": "2024",
   "order": 4,
+  "category": "performance",
   "cover": "images/cover.jpg",
   "coverAlt": "Multi-Channel Sound at Elastic Arts — documentation 1",
   "gallery": [

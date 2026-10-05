@@ -2,6 +2,7 @@
 title: Your artwork title
 year: "2026"
 order: 1
+category: work
 cover: images/cover.jpg
 coverAlt: Describe what is visible in the cover image.
 gallery:

@@ -10,9 +10,10 @@ A modular Eleventy portfolio, built from a folder for each artwork. Prepared on 
 4. Upload your web-sized JPG/PNG/WebP images into its `images/` subfolder.
 5. Edit the title, year, cover filename, image descriptions, and project text. The paths and capitalization must match your uploaded files.
 6. Add each image to `gallery` in the order you want it displayed. `caption` is optional. Lower `order` values appear first on the homepage.
-7. Commit, review the build, and merge into `main` to publish once Pages is enabled.
+7. Set `category: performance` for Performances, or `category: work` for Selected Works. Elastic Arts is classified as a performance. Each project keeps its existing URL.
+8. Commit to `portfolio-structure` to update the live preview. Review and merge into `main` when ready.
 
-The homepage and project page are generated automatically. You never edit the homepage to add an artwork. Empty image folders are not stored by Git; upload at least one image.
+The homepage and project page are generated automatically. You never edit either listing page to add an artwork or performance. Empty image folders are not stored by Git; upload at least one image.
 
 Set `draft: true` to omit a project page and its homepage card. This is NOT privacy protection: the repository is public and image files are still copied. Never commit private material or credentials.
 
@@ -32,10 +33,11 @@ Open the local URL printed in the terminal. `npm run build` generates `_site/`, 
 - `src/projects/<slug>/index.md`: artwork text and metadata. Existing migrated files use JSON-formatted YAML front matter; the template uses ordinary YAML. Both work.
 - `src/projects/<slug>/images/`: local artwork images, independent of Wix hosting.
 - `src/_includes/`: shared page and project layouts.
-- `src/_data/site.json`: name, description, Instagram link.
+- `src/_data/site.json`: name, description, email, Instagram link.
 - `src/assets/style.css`: responsive design.
-- `src/contact.md`: biography and contact link.
-- `.github/workflows/pages.yml`: builds branches/PRs; deploys only main.
+- `src/about.njk`: biography and email; `src/contact.md` redirects old contact links to About.
+- `src/performances.njk`: generated performance listing.
+- `.github/workflows/pages.yml`: builds branches/PRs; deploys main and the authorized portfolio-structure preview branch.
 
 ## Enable GitHub Pages when ready
 
@@ -48,7 +50,7 @@ The initial workflow uses `/artist-website/` as its URL prefix. To use your cust
 
 ## Authentication
 
-The portfolio itself is static and public: no sign-in, database, passwords, or visitor tokens. GitHub controls repository editing. Actions checks out with its built-in token and disables persisted Git credentials. Build permissions are `contents: read`; only the main-branch deployment job receives `pages: write` and `id-token: write` for Pages/OIDC. There is no personal access token or GoDaddy credential in this project. Never put secrets in Markdown, browser JavaScript, or committed files.
+The portfolio itself is static and public: no sign-in, database, passwords, or visitor tokens. GitHub controls repository editing. Actions checks out with its built-in token and disables persisted Git credentials. Build permissions are `contents: read`; only the deployment job on main or portfolio-structure receives `pages: write` and `id-token: write` for Pages/OIDC. There is no personal access token or GoDaddy credential in this project. Never put secrets in Markdown, browser JavaScript, or committed files.
 
 ## Migration notes / review before launch
 
@@ -57,6 +59,6 @@ The portfolio itself is static and public: no sign-in, database, passwords, or v
 - Text comes from the public project pages, with minimal title/location normalization. Verify spelling and credits before launch. `docs/migration-sources.json` records source URLs and image origins.
 - Image alt text is provisional and should be replaced with specific visual descriptions and any photographer credits.
 - The biography uses only the general artist description; the old time-sensitive employment statement is omitted for review.
-- Contact currently links to Instagram. Add a public email or a form provider when ready; no nonfunctional form is shown.
+- About includes the public email yousifalzayed.art@gmail.com and Instagram.
 - Existing Wix project URLs will change. Add redirect pages for old URLs before switching the domain if preserving incoming links is required.
 - Artwork and text remain the property of their respective rights holders. No license is granted by this repository.

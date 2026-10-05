@@ -1,8 +1,10 @@
 ---
 layout: base.njk
 ---
+{% set listingUrl = '/performances/' if category == 'performance' else '/' %}
+{% set listingLabel = 'Performances' if category == 'performance' else 'Selected Works' %}
 <article>
-  <a class="back" href="{{ '/' | url }}">← Selected Works</a>
+  <a class="back" href="{{ listingUrl | url }}">← {{ listingLabel }}</a>
   <div class="project-intro">
     <div><h1>{{ title }}</h1><p class="meta">{{ year }}{% if medium %} · {{ medium }}{% endif %}</p></div>
     <div class="prose">{{ content | safe }}{% if links.length %}<ul class="project-links">{% for link in links %}<li><a href="{{ link.url | escape }}">{{ link.label | escape }} ↗</a></li>{% endfor %}</ul>{% endif %}</div>
@@ -10,5 +12,5 @@ layout: base.njk
   <div class="gallery">
   {% for image in gallery %}<figure><a href="{{ (page.url + image.src) | url }}"><img src="{{ (page.url + image.src) | url }}" alt="{{ image.alt | escape }}" {% if not loop.first %}loading="lazy"{% endif %}></a>{% if image.caption %}<figcaption>{{ image.caption }}</figcaption>{% endif %}</figure>{% endfor %}
   </div>
-  <a class="back end" href="{{ '/' | url }}">← All selected works</a>
+  <a class="back end" href="{{ '/' | url }}">← All {{ listingLabel | lower }}</a>
 </article>

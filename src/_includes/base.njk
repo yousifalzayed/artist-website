@@ -12,8 +12,9 @@
   <header class="header">
     <a class="wordmark" href="{{ '/' | url }}">{{ site.name }}</a>
     <nav aria-label="Main navigation">
-      <a href="{{ '/' | url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>Selected Works</a>
-      <a href="{{ '/contact/' | url }}" {% if page.url == '/contact/' %}aria-current="page"{% endif %}>Contact</a>
+      <a href="{{ '/' | url }}" {% if page.url == '/' or (category != 'performance' and page.url.startsWith('/projects/')) %}aria-current="page"{% endif %}>Selected Works</a>
+      <a href="{{ '/performances/' | url }}" {% if page.url == '/performances/' or category == 'performance' %}aria-current="page"{% endif %}>Performances</a>
+      <a href="{{ '/about/' | url }}" {% if page.url == '/about/' %}aria-current="page"{% endif %}>About</a>
     </nav>
     <a class="social" href="{{ site.instagram }}">Instagram ↗</a>
   </header>
