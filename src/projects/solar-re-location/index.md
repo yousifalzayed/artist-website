@@ -20,7 +20,32 @@
   "materials": "Acrylic, Discarded Solar Panels, Projector, Speakers, Mixer",
   "localVideo": "videos/documentation.mp4",
   "localVideoWidth": 540,
-  "localVideoHeight": 960
+  "localVideoHeight": 960,
+  "mediaGallery": [
+    {
+      "src": "videos/documentation.mp4",
+      "kind": "video",
+      "width": 540,
+      "height": 960,
+      "alt": "Solar Re-Location — video documentation"
+    },
+    {
+      "src": "images/cover.jpg",
+      "kind": "landscape",
+      "width": 1400,
+      "height": 935,
+      "alt": "Solar Re-Location — documentation 1"
+    },
+    {
+      "src": "images/01.jpg",
+      "kind": "portrait",
+      "width": 935,
+      "height": 1400,
+      "alt": "Solar Re-Location — documentation 2"
+    }
+  ],
+  "mediaColumns": "0.562500000fr 1.497326203fr 0.667857143fr",
+  "mediaPortraitColumns": "0.5625fr 0.667857143fr"
 }
 ---
 

@@ -55,3 +55,7 @@ h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:300}
 .project-page .gallery img,.project-page .gallery figure:first-child img{display:block;width:100%;height:auto;max-height:none;object-fit:initial;background:transparent}
 .project-page .performance-video{max-width:760px;margin-left:auto;margin-right:auto}
 @media(max-width:540px){.project-page .gallery{gap:12px}.gallery-row{gap:12px}.gallery-row--portrait{grid-template-columns:repeat(2,minmax(0,1fr))}.gallery-row--portrait:has(figure:only-child){grid-template-columns:minmax(0,1fr);max-width:240px}.gallery-row--landscape{grid-template-columns:minmax(0,1fr)}}
+
+/* Solar documentation shares one height with the landscape between portraits. */
+.gallery-media-row video{display:block;width:100%;height:auto}
+@media(max-width:540px){.gallery-media-row{grid-template-columns:var(--portrait-columns)}.gallery-media-video{order:1}.gallery-media-portrait{order:2}.gallery-media-landscape{order:3;grid-column:1 / -1}}

@@ -18,7 +18,7 @@ layout: base.njk
     <p class="video-link"><a href="{{ player.url | escape }}">Watch on {{ player.provider }} ↗</a></p>
   </section>
   {% endif %}
-  {% if localVideo %}
+  {% if localVideo and not mediaGallery %}
   <section class="performance-video" aria-label="{{ title | escape }} video documentation">
     <video controls playsinline preload="metadata" width="{{ localVideoWidth }}" height="{{ localVideoHeight }}" aria-label="{{ title | escape }} video documentation" style="display:block;width:auto;height:auto;max-width:100%;max-height:70vh;margin:0 auto">
       <source src="{{ (page.url + localVideo) | url }}" type="video/mp4">
@@ -27,11 +27,28 @@ layout: base.njk
   </section>
   {% endif %}
   <div class="gallery">
+  {% if mediaGallery %}
+    <div class="gallery-row gallery-media-row" style="--gallery-columns: {{ mediaColumns }}; --gallery-width: 1080px; --portrait-columns: {{ mediaPortraitColumns }}">
+    {% for image in mediaGallery %}
+      <figure class="gallery-media-{{ image.kind }}">
+      {% if image.kind == 'video' %}
+        <video controls playsinline preload="metadata" width="{{ image.width }}" height="{{ image.height }}" aria-label="{{ image.alt | escape }}">
+          <source src="{{ (page.url + image.src) | url }}" type="video/mp4">
+          <a href="{{ (page.url + image.src) | url }}">Watch video documentation</a>
+        </video>
+      {% else %}
+        <a href="{{ (page.url + image.src) | url }}"><img src="{{ (page.url + image.src) | url }}" alt="{{ image.alt | escape }}" width="{{ image.width }}" height="{{ image.height }}" loading="lazy"></a>
+      {% endif %}
+      </figure>
+    {% endfor %}
+    </div>
+  {% else %}
   {% for row in gallery | galleryRows(page.inputPath, galleryWidth) %}
     <div class="gallery-row gallery-row--{{ row.orientation }}" style="--gallery-columns: {{ row.columns }}; --gallery-width: {{ row.maxWidth }}px">
     {% for image in row.images %}<figure><a href="{{ (page.url + image.src) | url }}"><img src="{{ (page.url + image.src) | url }}" alt="{{ image.alt | escape }}" width="{{ image.width }}" height="{{ image.height }}" loading="lazy"></a>{% if image.caption %}<figcaption>{{ image.caption }}</figcaption>{% endif %}</figure>{% endfor %}
     </div>
   {% endfor %}
+  {% endif %}
   </div>
   <a class="back end" href="{{ listingUrl | url }}">← All {{ listingLabel | lower }}</a>
 </article>
