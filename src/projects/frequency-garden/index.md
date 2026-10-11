@@ -2,6 +2,7 @@
 {
   "title": "Frequency Garden",
   "year": "2024",
+  "exhibition": "Voltaje – Salón de Arte y Tecnología",
   "order": 1,
   "video": "https://vimeo.com/1035462371",
   "videoAutoplay": true,
@@ -12,10 +13,6 @@
     {
       "src": "images/cover.jpg",
       "alt": "Frequency Garden — documentation 1"
-    },
-    {
-      "src": "images/01.jpg",
-      "alt": "Frequency Garden — documentation 2"
     },
     {
       "src": "images/02.jpg",
