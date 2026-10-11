@@ -49,6 +49,6 @@
 }
 ---
 
-Solar Re-Location, paired climate data of carbon admissions with the placement of discarded solar panels on top of a map of Chicago.
+Solar Re-Location, paired climate data of carbon admissions with the placement of discarded solar panels on top of a map of Chicago. Light Projection was used to map the city of Chicago and represent the density of the population, critiquing where solar is mostly needed vs where solar farms are proposed (in rural non-dense areas).
 
-Light Projection was used to map the city of Chicago and represent the density of the population. The light from the projection shot directly onto the solar panels which were plugged into a pair of speakers, in this way, participants could alter the sound by creating shadows and blocking the light. In collaboration with Climate Scientist, Mika Tosca
+The light from the projection shot directly onto the solar panels which were plugged into a pair of speakers, in this way, participants could alter the sound by creating shadows and blocking the light. In collaboration with Climate Scientist, Mika Tosca.
