@@ -1,7 +1,9 @@
+import { galleryRows } from "./lib/gallery-layout.js";
 import { videoEmbed } from "./lib/video-embed.js";
 
 export default function (config) {
   config.addFilter("videoEmbed", videoEmbed);
+  config.addFilter("galleryRows", galleryRows);
   config.addPassthroughCopy("src/assets");
   config.addPassthroughCopy("src/projects/**/images/*");
   config.addCollection("projects", api => api.getFilteredByGlob("src/projects/*/index.md")

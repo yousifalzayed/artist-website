@@ -19,7 +19,11 @@ layout: base.njk
   </section>
   {% endif %}
   <div class="gallery">
-  {% for image in gallery %}<figure><a href="{{ (page.url + image.src) | url }}"><img src="{{ (page.url + image.src) | url }}" alt="{{ image.alt | escape }}" {% if not loop.first %}loading="lazy"{% endif %}></a>{% if image.caption %}<figcaption>{{ image.caption }}</figcaption>{% endif %}</figure>{% endfor %}
+  {% for row in gallery | galleryRows(page.inputPath) %}
+    <div class="gallery-row gallery-row--{{ row.orientation }}" style="--gallery-columns: {{ row.columns }}; --gallery-width: {{ row.maxWidth }}px">
+    {% for image in row.images %}<figure><a href="{{ (page.url + image.src) | url }}"><img src="{{ (page.url + image.src) | url }}" alt="{{ image.alt | escape }}" width="{{ image.width }}" height="{{ image.height }}" loading="lazy"></a>{% if image.caption %}<figcaption>{{ image.caption }}</figcaption>{% endif %}</figure>{% endfor %}
+    </div>
+  {% endfor %}
   </div>
   <a class="back end" href="{{ listingUrl | url }}">← All {{ listingLabel | lower }}</a>
 </article>
