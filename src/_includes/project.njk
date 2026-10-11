@@ -6,7 +6,7 @@ layout: base.njk
 <article class="project-page">
   <a class="back" href="{{ listingUrl | url }}">← {{ listingLabel }}</a>
   <div class="project-intro">
-    <div><h1>{{ title }}</h1><p class="meta">{{ year }}{% if exhibition %} · {{ exhibition | escape }}{% endif %}{% if medium %} · {{ medium }}{% endif %}</p></div>
+    <div><h1>{{ title }}</h1><p class="meta">{{ year }}{% if exhibition %} · {{ exhibition | escape }}{% endif %}{% if medium %} · {{ medium }}{% endif %}</p>{% if materials %}<p class="meta">{{ materials | escape }}</p>{% endif %}</div>
     <div class="prose">{{ content | safe }}{% if links.length %}<ul class="project-links">{% for link in links %}<li><a href="{{ link.url | escape }}">{{ link.label | escape }} ↗</a></li>{% endfor %}</ul>{% endif %}</div>
   </div>
   {% if video %}

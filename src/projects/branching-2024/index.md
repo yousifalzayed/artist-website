@@ -23,19 +23,15 @@
       "alt": "Branching — documentation 4"
     },
     {
-      "src": "images/04.jpg",
-      "alt": "Branching — documentation 5"
-    },
-    {
       "src": "images/05.jpg",
       "alt": "Branching — documentation 6"
     }
   ],
-  "source": "https://www.yousifalzayed.com/portfolio-collections/my-portfolio/branching-2024"
+  "source": "https://www.yousifalzayed.com/portfolio-collections/my-portfolio/branching-2024",
+  "exhibition": "SAIC Galleries, Chicago",
+  "materials": "Acrylic, Mirror, Projector, Fog Machine. 8:00 Minutes"
 }
 ---
-
-Acrylic, Mirror, Projector, Fog Machine. 8:00 Minutes
 
 The video is created through a physics experiment on fluid instabilities where two fluids, water and viscous glycerin, are pumped into a confined space to create a complex pattern. This pattern manifests prevalent forms of growth in nature, and be detected across a vast range of categories (eg. plants, animals, rivers etc..) These videos are then processed to highlight and distill the outline of the pattern are projected into the fog.
 
