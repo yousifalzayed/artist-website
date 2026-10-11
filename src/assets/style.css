@@ -27,3 +27,21 @@ h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:300}
 .work-label h2{font-size:clamp(18px,1.7vw,24px);font-weight:300;letter-spacing:0;line-height:1.3}
 .header nav,.social,.meta,.back,.gallery figcaption,footer,.video-link{font-weight:400}
 @media(max-width:540px){.wordmark{font-size:22px}.work-label h2{font-size:22px}}
+
+/* Shared gallery image viewer */
+.gallery a:has(img){cursor:zoom-in}
+.image-viewer{position:fixed;inset:0;width:100%;height:100%;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;background:rgba(255,255,255,.95);color:#202020;overflow:hidden;overscroll-behavior:contain}
+.image-viewer::backdrop{background:rgba(255,255,255,.75)}
+.viewer-stage{position:absolute;inset:64px 76px 48px;display:flex;align-items:center;justify-content:center}
+.viewer-stage figure{margin:0;max-width:100%;max-height:100%;display:flex;flex-direction:column;align-items:center;min-height:0}
+.viewer-stage img{display:block;width:auto;height:auto;max-width:100%;max-height:calc(100dvh - 150px);object-fit:contain;user-select:none;-webkit-user-select:none}
+.viewer-stage figcaption{max-width:65ch;flex-shrink:0;font-size:12px;line-height:1.5;text-align:center;margin-top:12px}
+.image-viewer button{position:absolute;z-index:1;display:flex;align-items:center;justify-content:center;width:48px;height:48px;padding:0;border:0;border-radius:0;background:transparent;color:inherit;cursor:pointer;font-family:Arial,sans-serif;font-weight:300;line-height:1}
+.image-viewer button:hover{background:rgba(0,0,0,.05)}
+.image-viewer button:focus-visible{outline:1px solid currentColor;outline-offset:2px}
+.image-viewer [hidden]{display:none}
+.viewer-close{top:max(12px,env(safe-area-inset-top));right:max(12px,env(safe-area-inset-right));font-size:36px}
+.viewer-prev,.viewer-next{top:50%;transform:translateY(-50%);font-size:44px}
+.viewer-prev{left:12px}.viewer-next{right:12px}
+.viewer-count{position:absolute;bottom:max(12px,env(safe-area-inset-bottom));left:0;right:0;margin:0;text-align:center;font-size:12px;color:#737373;pointer-events:none}
+@media(max-width:540px){.viewer-stage{inset:72px 48px 56px}.viewer-stage img{max-height:calc(100dvh - 166px)}.viewer-prev{left:0}.viewer-next{right:0}.image-viewer button{width:44px;height:44px}.viewer-prev,.viewer-next{font-size:36px}}
