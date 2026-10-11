@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ '/assets/style.css' | url }}?v=solar-level-gallery-1">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | url }}?v=about-photo-1">
 </head>
 <body id="top">
   <a class="skip" href="#main">Skip to content</a>
@@ -19,7 +19,7 @@
       <a href="{{ '/performances/' | url }}" {% if page.url == '/performances/' or category == 'performance' %}aria-current="page"{% endif %}>Performances</a>
       <a href="{{ '/about/' | url }}" {% if page.url == '/about/' %}aria-current="page"{% endif %}>About</a>
     </nav>
-    <a class="social" href="{{ site.instagram }}">Instagram ↗</a>
+    {% if page.url != '/about/' %}<a class="social" href="{{ site.instagram }}">Instagram ↗</a>{% endif %}
   </header>
   <main id="main">{{ content | safe }}</main>
   <footer><span>© {{ site.name }}</span><a href="#top">Back to top ↑</a></footer>

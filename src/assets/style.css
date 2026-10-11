@@ -59,3 +59,13 @@ h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:300}
 /* Solar documentation shares one height with the landscape between portraits. */
 .gallery-media-row video{display:block;width:100%;height:auto}
 @media(max-width:540px){.gallery-media-row{grid-template-columns:var(--portrait-columns)}.gallery-media-video{order:1}.gallery-media-portrait{order:2}.gallery-media-landscape{order:3;grid-column:1 / -1}}
+
+/* About biography and photograph. */
+.about-page{max-width:1080px}
+.about-content{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;margin-top:36px}
+.about-photo{margin:0}
+.about-photo img{display:block;width:100%;height:auto}
+.about-page .contact-bio{font-size:16px;line-height:1.8;max-width:none;margin:0}
+.about-email{margin:28px 0 0;overflow-wrap:anywhere}
+.about-email strong{font-weight:700}
+@media(max-width:700px){.about-content{grid-template-columns:1fr;gap:28px;margin-top:28px}}
