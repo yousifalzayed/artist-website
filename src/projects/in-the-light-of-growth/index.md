@@ -37,21 +37,13 @@
     {
       "src": "images/07.jpg",
       "alt": "In the Light of Growth — documentation 8"
-    },
-    {
-      "src": "images/08.jpg",
-      "alt": "In the Light of Growth — documentation 9"
-    },
-    {
-      "src": "images/09.jpg",
-      "alt": "In the Light of Growth — documentation 10"
     }
   ],
-  "source": "https://www.yousifalzayed.com/portfolio-collections/my-portfolio/in-the-light-of-growth"
+  "source": "https://www.yousifalzayed.com/portfolio-collections/my-portfolio/in-the-light-of-growth",
+  "exhibition": "Ars Electronica, Post City · Linz, Austria",
+  "galleryWidth": 1080
 }
 ---
-
-Ars Electronica, Post City · Linz, Austria
 
 In the Light of Growth is a light sculpture that displays a recently discovered transition between disordered and proportionate fluid growth patterns.
 
