@@ -6,6 +6,7 @@ export default function (config) {
   config.addFilter("galleryRows", galleryRows);
   config.addPassthroughCopy("src/assets");
   config.addPassthroughCopy("src/projects/**/images/*");
+  config.addPassthroughCopy("src/projects/**/videos/*");
   config.addCollection("projects", api => api.getFilteredByGlob("src/projects/*/index.md")
     .filter(item => !item.data.draft).sort((a,b) => (a.data.order ?? 999) - (b.data.order ?? 999)));
   config.addCollection("selectedWorks", api => api.getFilteredByGlob("src/projects/*/index.md")

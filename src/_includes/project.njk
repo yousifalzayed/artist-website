@@ -18,6 +18,14 @@ layout: base.njk
     <p class="video-link"><a href="{{ player.url | escape }}">Watch on {{ player.provider }} ↗</a></p>
   </section>
   {% endif %}
+  {% if localVideo %}
+  <section class="performance-video" aria-label="{{ title | escape }} video documentation">
+    <video controls playsinline preload="metadata" width="{{ localVideoWidth }}" height="{{ localVideoHeight }}" aria-label="{{ title | escape }} video documentation" style="display:block;width:auto;height:auto;max-width:100%;max-height:70vh;margin:0 auto">
+      <source src="{{ (page.url + localVideo) | url }}" type="video/mp4">
+      <a href="{{ (page.url + localVideo) | url }}">Watch video documentation</a>
+    </video>
+  </section>
+  {% endif %}
   <div class="gallery">
   {% for row in gallery | galleryRows(page.inputPath, galleryWidth) %}
     <div class="gallery-row gallery-row--{{ row.orientation }}" style="--gallery-columns: {{ row.columns }}; --gallery-width: {{ row.maxWidth }}px">
