@@ -3,7 +3,7 @@ layout: base.njk
 ---
 {% set listingUrl = '/performances/' if category == 'performance' else '/' %}
 {% set listingLabel = 'Performances' if category == 'performance' else 'Selected Works' %}
-<article>
+<article class="project-page">
   <a class="back" href="{{ listingUrl | url }}">← {{ listingLabel }}</a>
   <div class="project-intro">
     <div><h1>{{ title }}</h1><p class="meta">{{ year }}{% if exhibition %} · {{ exhibition | escape }}{% endif %}{% if medium %} · {{ medium }}{% endif %}</p></div>
