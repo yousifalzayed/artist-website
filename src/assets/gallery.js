@@ -75,7 +75,7 @@
       event.stopImmediatePropagation();
       return;
     }
-    if (event.target === viewer || event.target.classList.contains('viewer-stage')) viewer.close();
+    if (!event.target.closest('img, button, figcaption')) viewer.close();
   }, true);
 
   viewer.addEventListener('touchstart', event => {
