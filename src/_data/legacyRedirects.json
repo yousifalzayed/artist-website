@@ -1,0 +1,47 @@
+[
+  {
+    "from": "/contact-9",
+    "to": "/about/",
+    "title": "About Yousif Alzayed"
+  },
+  {
+    "from": "/portfolio-collections/my-portfolio/branching-2024",
+    "to": "/projects/branching-2024/",
+    "title": "Branching"
+  },
+  {
+    "from": "/portfolio-collections/my-portfolio/multi-channel-sound-elastic-arts-alzayed-glennon-lópez-f-patsula",
+    "to": "/projects/elastic-arts/",
+    "title": "Multi-Channel Sound at Elastic Arts"
+  },
+  {
+    "from": "/portfolio-collections/my-portfolio/fluid-growth-through-light",
+    "to": "/projects/fluid-growth-through-light/",
+    "title": "Fluid Growth Through Light"
+  },
+  {
+    "from": "/portfolio-collections/my-portfolio/frequency-garden",
+    "to": "/projects/frequency-garden/",
+    "title": "Frequency Garden"
+  },
+  {
+    "from": "/portfolio-collections/my-portfolio/in-the-light-of-growth",
+    "to": "/projects/in-the-light-of-growth/",
+    "title": "In the Light of Growth"
+  },
+  {
+    "from": "/portfolio-collections/my-portfolio/slimevolt-2022-23",
+    "to": "/projects/slimevolt/",
+    "title": "SlimeVolt"
+  },
+  {
+    "from": "/portfolio-collections/my-portfolio/solar-art-workshop",
+    "to": "/projects/solar-art-workshop/",
+    "title": "Solar Art Workshop"
+  },
+  {
+    "from": "/portfolio-collections/my-portfolio/project-title-6",
+    "to": "/projects/solar-re-location/",
+    "title": "Solar Re-Location"
+  }
+]
