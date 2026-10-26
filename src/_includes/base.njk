@@ -10,6 +10,25 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/style.css' | url }}?v=about-photo-1">
+  {% if page.url == '/' or page.url == '/about/' %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {% include "person-schema.njk" %}
+      {% if page.url == '/about/' %},
+      {
+        "@type": "ProfilePage",
+        "@id": "https://yousifalzayed.com/about/#profile",
+        "url": "https://yousifalzayed.com/about/",
+        "name": "About Yousif Alzayed",
+        "mainEntity": { "@id": "https://yousifalzayed.com/#person" }
+      }
+      {% endif %}
+    ]
+  }
+  </script>
+  {% endif %}
 </head>
 <body id="top">
   <a class="skip" href="#main">Skip to content</a>
