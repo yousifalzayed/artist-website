@@ -1,0 +1,21 @@
+---
+pagination:
+  data: legacyRedirects
+  size: 1
+  alias: redirect
+permalink: "{{ redirect.from }}/index.html"
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ redirect.title | escape }} — Yousif Alzayed</title>
+  <link rel="canonical" href="https://yousifalzayed.com{{ redirect.to | escape }}">
+  <meta http-equiv="refresh" content="0; url=https://yousifalzayed.com{{ redirect.to | escape }}">
+</head>
+<body>
+  <p>This page has moved. <a href="https://yousifalzayed.com{{ redirect.to | escape }}">Continue to {{ redirect.title | escape }}</a>.</p>
+</body>
+</html>
