@@ -12,7 +12,7 @@ layout: base.njk
   {% if videoFlyer %}<div class="gallery gallery--with-flyer">{% endif %}
   {% if video %}
   {% set player = video | videoEmbed(videoAutoplay, videoLoop) %}
-  {% if videoFlyer %}<div class="performance-media-pair" style="--flyer-ratio: {{ videoFlyer.ratio }}">{% endif %}
+  {% if videoFlyer %}<div class="performance-media-pair" style="--flyer-ratio: {{ videoFlyer.ratio }}fr">{% endif %}
   <section class="performance-video" aria-label="{{ title | escape }} video">
     <div class="video-frame">
       <iframe src="{{ player.src | escape }}" title="{{ title | escape }} — {{ player.provider }} player" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
