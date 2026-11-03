@@ -1,7 +1,10 @@
 ---
 title: Seasons of Care
+year: "2025"
+cover: images/performance-cover.jpg
+coverAlt: Seasons of Care — live musicians beneath a colorful projection at the Wild Mile
 category: performance
-order: 5
+order: 3
 video: https://vimeo.com/1194403457
 gallery: []
 ---
