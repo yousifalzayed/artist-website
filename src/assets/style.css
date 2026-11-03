@@ -69,3 +69,9 @@ h2,h3,h4,h5,h6{font-family:var(--font-heading);font-weight:300}
 .about-email{margin:28px 0 0;overflow-wrap:anywhere}
 .about-email strong{font-weight:700}
 @media(max-width:700px){.about-content{grid-template-columns:1fr;gap:28px;margin-top:28px}}
+
+/* Pair event artwork with an embedded performance at the same natural height. */
+.performance-media-pair{display:grid;grid-template-columns:1.777777778fr var(--flyer-ratio);gap:16px;align-items:start;min-width:0;margin-bottom:16px}
+.project-page .performance-media-pair .performance-video{min-width:0;width:100%;max-width:none;margin:0}
+@media(max-width:700px){.performance-media-pair{grid-template-columns:minmax(0,1fr);gap:20px}.performance-media-pair .event-flyer{width:100%;max-width:300px;justify-self:center}}
+@media(max-width:540px){.gallery-row--mixed{grid-template-columns:minmax(0,1fr)}.gallery-row--mixed .gallery-item--portrait{width:100%;max-width:280px;justify-self:center}}

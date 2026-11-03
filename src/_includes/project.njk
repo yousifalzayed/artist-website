@@ -9,14 +9,22 @@ layout: base.njk
     <div><h1>{{ title }}</h1><p class="meta">{{ year }}{% if exhibition %} · {{ exhibition | escape }}{% endif %}{% if medium %} · {{ medium }}{% endif %}</p>{% if materials %}<p class="meta">{{ materials | escape }}</p>{% endif %}</div>
     <div class="prose">{{ content | safe }}{% if links.length %}<ul class="project-links">{% for link in links %}<li><a href="{{ link.url | escape }}">{{ link.label | escape }} ↗</a></li>{% endfor %}</ul>{% endif %}</div>
   </div>
+  {% if videoFlyer %}<div class="gallery gallery--with-flyer">{% endif %}
   {% if video %}
   {% set player = video | videoEmbed(videoAutoplay, videoLoop) %}
+  {% if videoFlyer %}<div class="performance-media-pair" style="--flyer-ratio: {{ videoFlyer.ratio }}">{% endif %}
   <section class="performance-video" aria-label="{{ title | escape }} video">
     <div class="video-frame">
       <iframe src="{{ player.src | escape }}" title="{{ title | escape }} — {{ player.provider }} player" allow="autoplay; fullscreen; picture-in-picture; encrypted-media" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
     </div>
     <p class="video-link"><a href="{{ player.url | escape }}">Watch on {{ player.provider }} ↗</a></p>
   </section>
+  {% if videoFlyer %}
+    <figure class="event-flyer">
+      <a href="{{ (page.url + videoFlyer.src) | url }}"><img src="{{ (page.url + videoFlyer.src) | url }}" alt="{{ videoFlyer.alt | escape }}" width="{{ videoFlyer.width }}" height="{{ videoFlyer.height }}"></a>
+    </figure>
+  </div>
+  {% endif %}
   {% endif %}
   {% if localVideo and not mediaGallery %}
   <section class="performance-video" aria-label="{{ title | escape }} video documentation">
@@ -26,7 +34,7 @@ layout: base.njk
     </video>
   </section>
   {% endif %}
-  <div class="gallery">
+  {% if not videoFlyer %}<div class="gallery">{% endif %}
   {% if mediaGallery %}
     <div class="gallery-row gallery-media-row" style="--gallery-columns: {{ mediaColumns }}; --gallery-width: 1080px; --portrait-columns: {{ mediaPortraitColumns }}">
     {% for image in mediaGallery %}
@@ -45,7 +53,7 @@ layout: base.njk
   {% else %}
   {% for row in gallery | galleryRows(page.inputPath, galleryWidth) %}
     <div class="gallery-row gallery-row--{{ row.orientation }}" style="--gallery-columns: {{ row.columns }}; --gallery-width: {{ row.maxWidth }}px">
-    {% for image in row.images %}<figure><a href="{{ (page.url + image.src) | url }}"><img src="{{ (page.url + image.src) | url }}" alt="{{ image.alt | escape }}" width="{{ image.width }}" height="{{ image.height }}" loading="lazy"></a>{% if image.caption %}<figcaption>{{ image.caption }}</figcaption>{% endif %}</figure>{% endfor %}
+    {% for image in row.images %}<figure class="gallery-item--{{ image.orientation }}"><a href="{{ (page.url + image.src) | url }}"><img src="{{ (page.url + image.src) | url }}" alt="{{ image.alt | escape }}" width="{{ image.width }}" height="{{ image.height }}" loading="lazy"></a>{% if image.caption %}<figcaption>{{ image.caption }}</figcaption>{% endif %}</figure>{% endfor %}
     </div>
   {% endfor %}
   {% endif %}
